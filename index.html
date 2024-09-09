@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Resume</title>
+  <meta name="description" content="Alyana's resume created using HTML and CSS">
+  <meta name="author" content="Fly Nerd">
+  <link rel="icon" href="./img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <img src="./img/alyana.jpg" />
+    </div>
+    <h1>Alyana Patricia Angeles</h1>
+    <section>
+      <p>Hello! I am Alyana. I am an experienced DevOps/SRE professional adept at optimizing IT environments for efficiency, reliability, and scalability. Skilled in implementing DevOps methodologies to streamline workflows and enhance collaboration across cloud platforms. Experienced in designing and implementing robust monitoring and alerting systems, enabling proactive identification and resolution of issues to maintain system health and performance. Adept at fostering a culture of continuous integration, delivery, and improvement within cross-functional cloud teams, driving innovation and operational excellence.</p>
+      <a href="https://github.com/yanamazing" target="_blank">
+        <i class="fab fa-github-alt"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/alyanaangeles/" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </section>
+    <p>You are visitor number: <span id="visitor-count">0</span></p>
+    <script>
+        // Replace with your API Gateway URL
+        const apiUrl = "https://q30n1jbgph.execute-api.eu-west-1.amazonaws.com/v1/visitor-count";
+    
+        async function fetchVisitorCount() {
+          try {
+            const response = await fetch(apiUrl);
+            const data = await response.json();
+            document.getElementById('visitor-count').innerText = data.count;
+          } catch (error) {
+            console.error('Error fetching visitor count:', error);
+            document.getElementById('visitor-count').innerText = 'Error';
+          }
+        }
+    
+        // Fetch the visitor count on page load
+        fetchVisitorCount();
+    </script>
+  </header>
+  <main>
+    <section>
+      <h3>Professional Experience</h3>
+      <article>
+        <div class='job-title'>
+          <strong>Site Reliability Engineer</strong> <br>
+        </div>
+        <div>
+          <p><strong>Tech stack:</strong> AWS / Terraform / Docker / RabbitMQ / Kubernetes / Git </p>
+          <ul class="job-description">
+            <li> Integral member of the Storage squad within Infrastructure team, entrusted with managing and scaling storage-related tools using AWS Cloud and services including Amazon S3, AWS RDS Postgres, Aurora, MongoDB, RabbitMQ, and OpenSearch.</li>
+            <li>Proficient with container systems like Docker and orchestrating systems using Kubernetes.
+            </li>
+            <li>Developed a self-service platform utilizing Argo Events and Argo Workflows, enabling
+                developers to restore RDS instances to point-in-time on-demand, reducing infrastructure
+                reliance during incidents significantly.</li>
+            <li>
+                Played a crucial role in providing proactive support for the FCA on-premise migration to AWS
+cloud, ensuring a seamless transition and uninterrupted operations.
+            </li>
+            <li>
+                Enhanced Terraform modules to streamline infrastructure management and optimize resource
+utilization.
+            </li>
+            <li>
+                Worked on scaling RabbitMQ clusters and configuring cross-market federation, bolstering
+infrastructure resilience and efficiency.
+            </li>
+            <li>
+                Improved observability by configuring monitoring dashboards and setting up alerting
+mechanisms using Prometheus, Grafana, and Alertmanager, enabling prompt identification
+and resolution of issues.
+            </li>
+            <li>
+                Actively monitored services using Datadog to ensure optimal performance and reliability.
+            </li>
+            <li>
+                Conducted tech demos to empower developers in utilizing tools and services effectively.
+            </li>
+            <li>
+                Participated in the support on-call rotation, promptly addressing critical incidents to minimize
+                operational disruption.
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <section>
+        <h3>Education</h3>
+        <article>
+          <div class='school'>
+            <span>2012-2016</span> <strong>University of Santo Tomas (Manila, Philippines)</strong>
+          </div>
+          <div class="descrition">
+          Bachelor of Science in Information Technology
+          </div>
+        </article>
+      </section>
+    <section>
+        <h3>Certifications & Technical Skills</h3>
+        <div class='skills'>
+          <div class='column'>
+            <h4>Devops and Cloud</h4>
+            <ul>
+              <li>AWS/Azure</li>
+              <li>Terraform</li>
+              <li>Kubernetes</li>
+              <li>Docker</li>
+              <li>Helm</li>
+              <li>Git</li>
+              <li>Bash</li>
+              <li>Prometheus and Grafana</li>
+              <li>Datadog</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Languages</h4>
+            <p>🇬🇧 English - Proficient</p>
+            <p>🇵🇭 Tagalog - Native speaker</p>
+          </div>
+        </div>
+      </section>
+  </main>
+  <footer>
+    <p>Created by: <a href="https://www.github.com/yanamazing">@yanamazing</a>  / <a href="https://www.linkedin.com/in/alyanaangeles">LinkedIn</a> / 2024 </p>
+  </footer>
+</body>
+</html>
